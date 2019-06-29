@@ -1,12 +1,14 @@
 <a style="cursor: pointer;" 
-class="list-group-item clearfix"
-[routerLink]="[index]"
-routerLinkActive="active">
-	<div class="pull-left">
-		<h4 class="list-group-item-heading">{{item.name}}</h4>
-		<p class="list-group-item-heading">{{item.description}}</p>
-		<span class="pull-right">
-			<img src="{{item.imgPath}}" alt="{{item.name}}" class="img-fluid" alt="" style="max-height: 50px">
+	class="list-group-item clearfix"
+	[routerLink]="[index]"
+	routerLinkActive="active">
+	<div class="row">
+		<div class="col-sm-9">
+			<h4 class="list-group-item-heading">{{item.name}}</h4>
+			<p class="list-group-item-heading">{{item.description}}</p>
+		</div>
+		<span class="col-sm-3">
+			<img src="{{item.imgPath}}" alt="{{item.name}}" class="img-fluid" alt="">
 		</span>
 	</div>
 </a>

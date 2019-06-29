@@ -19,7 +19,6 @@ export class SigninComponent implements OnInit {
       const email = form.value.email;
       const password = form.value.password;
       this.authService.signinUser(email, password);
-      // this.router.navigate(['/'])
   }
 
 }

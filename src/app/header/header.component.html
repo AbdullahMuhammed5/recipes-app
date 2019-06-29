@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light text-white bg-light">
   <div class="container">
-    <a class="navbar-brand" routerLink="/">Navbar</a>
+    <a class="navbar-brand" routerLink="/">Logo</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,10 +12,26 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/shop" routerLinkActive="active">Shopping List</a>
         </li>
-        <a class="nav-link" routerLink="/signup">Register</a>
-        <a class="nav-link" routerLink="/signin" >Login</a>
       </ul>
-      <ul class="dropdown ml-auto" appDropdown>
+      <div class="ml-auto d-flex">
+        
+        <ng-template [ngIf]="!this.authService.isAuthenticated()" class="ml-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signin" >Login</a>
+            </li>
+          </ul>
+        </ng-template>
+
+        <a class="nav-link" 
+            style="cursor: pointer;" 
+            (click)="onLogout()" 
+            *ngIf="this.authService.isAuthenticated()">Logout</a>
+      
+        <ul class="dropdown" appDropdown>
           <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manage Data
           </a>
@@ -23,7 +39,9 @@
             <a class="dropdown-item" style="cursor: pointer;" (click)="saveData()">Save data</a>
             <a class="dropdown-item" style="cursor: pointer;" (click)="getData()">Fetch data</a>
           </div>
-      </ul>
+        </ul>
+    </div>
+
     </div>
   </div>
 </nav>

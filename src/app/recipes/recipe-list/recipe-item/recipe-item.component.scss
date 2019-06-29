@@ -1,0 +1,17 @@
+a{
+    text-decoration: none;
+    &:hover{
+    text-decoration: none;
+    }
+}
+a.list-group-item{
+    margin-bottom: 10px;
+}
+img{
+    border-radius: 10%;
+}
+.list-group-item.active{
+    color: #fff !important;
+    background-color: #dd1b1b;
+    border-color: #dd1b1b;
+}

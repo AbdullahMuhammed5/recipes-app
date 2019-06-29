@@ -7,6 +7,7 @@ import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AuthGaurd } from './auth/authGaurd.service';
 
 const routes: Routes = [
   {
@@ -16,9 +17,9 @@ const routes: Routes = [
     path: 'recipes', component: RecipesComponent, 
     children: [
       { path: '', component: NoRecipeSelectedComponent },
-      { path: 'new', component: RecipeEditComponent },
+      { path: 'new', component: RecipeEditComponent, canActivate: [AuthGaurd] },
       { path: ':id', component: RecipeDetailsComponent },
-      { path: ':id/edit', component: RecipeEditComponent }
+      { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGaurd] }
     ]
   },
   {
