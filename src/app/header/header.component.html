@@ -31,7 +31,7 @@
             (click)="onLogout()" 
             *ngIf="this.authService.isAuthenticated()">Logout</a>
       
-        <ul class="dropdown" appDropdown>
+        <ul class="dropdown" *ngIf="this.authService.isAuthenticated()" appDropdown>
           <a class="nav-link dropdown-toggle" style="cursor: pointer;" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Manage Data
           </a>
