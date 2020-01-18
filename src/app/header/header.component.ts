@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private storeData: DataStorageService, private authService: AuthService) { }
+  constructor(private storeData: DataStorageService, public authService: AuthService) { }
   
   ngOnInit() {}
 

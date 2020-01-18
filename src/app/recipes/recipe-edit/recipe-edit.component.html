@@ -31,7 +31,7 @@
       <div class="row" formArrayName="ingredients">
         <div class="col-sm-12">
           <div class="row" 
-          *ngFor="let ingred of recipeForm.get('ingredients').controls; let i=index"
+          *ngFor="let ingred of formData.controls; let i=index"
           [formGroupName]="i"
           style="margin-top: 10px;">
             <div class="col-sm-7">
